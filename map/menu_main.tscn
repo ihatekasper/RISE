@@ -187,6 +187,7 @@ theme = SubResource( 4 )
 text = "Current Version:"
 
 [node name="updateText" type="RichTextLabel" parent="mainScr"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -199,6 +200,7 @@ custom_colors/default_color = Color( 0.6, 1, 0.541176, 1 )
 text = "Update Available!"
 
 [node name="updateBtn" type="Button" parent="mainScr"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -329.0
