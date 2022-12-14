@@ -117,7 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="RISE"
-run/main_scene="res://map/dm_arcade.tscn"
+run/main_scene="res://map/menu_main.tscn"
 boot_splash/image="res://img/studiokoulisplash.png"
 config/icon="res://icon.png"
 

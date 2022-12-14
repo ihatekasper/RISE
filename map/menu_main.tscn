@@ -108,6 +108,8 @@ bbcode_enabled = true
 bbcode_text = "==== ver 0.1 (Dec 09 22 - ??) ====
 
 
++ added map blackmesa/lobby
++ fixed crouching issues
 + sloppily added weapon switching
 	+ AK
 	+ Glock
@@ -125,15 +127,12 @@ bbcode_text = "==== ver 0.1 (Dec 09 22 - ??) ====
 + added falling \"sway\"
 + added weapon sway
 + added fire animation
-+ [s]added head bob[/s]
-	- ! caused problems with firing animation
 + added player health
 + added fall damage
 + added map dev_testing
 + added map dm_arcade
 + added developer console
 + added discord integration
-
 + added map de_powerplant
 + added ui themes
 + added options submenus
@@ -143,6 +142,8 @@ bbcode_text = "==== ver 0.1 (Dec 09 22 - ??) ====
 text = "==== ver 0.1 (Dec 09 22 - ??) ====
 
 
++ added map blackmesa/lobby
++ fixed crouching issues
 + sloppily added weapon switching
 	+ AK
 	+ Glock
@@ -160,15 +161,12 @@ text = "==== ver 0.1 (Dec 09 22 - ??) ====
 + added falling \"sway\"
 + added weapon sway
 + added fire animation
-+ added head bob
-	- ! caused problems with firing animation
 + added player health
 + added fall damage
 + added map dev_testing
 + added map dm_arcade
 + added developer console
 + added discord integration
-
 + added map de_powerplant
 + added ui themes
 + added options submenus
