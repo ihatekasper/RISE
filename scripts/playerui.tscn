@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://font/KGHAPPYSolid.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://textures/dmgtaken2.png" type="Texture" id=2]
@@ -21,6 +21,22 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "Death"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("dmg_screen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -171,6 +187,7 @@ rect_scale = Vector2( 0.29, 0.29 )
 texture = ExtResource( 6 )
 
 [node name="uiAnim" type="AnimationPlayer" parent="."]
+anims/Death = SubResource( 8 )
 anims/RESET = SubResource( 5 )
 anims/hitmarker = SubResource( 6 )
 anims/pain = SubResource( 7 )

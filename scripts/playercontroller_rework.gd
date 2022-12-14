@@ -74,6 +74,10 @@ func _ready():
 		.add_argument('health', TYPE_INT)\
 		.register()
 
+	Console.add_command('kill', self, 'respawn')\
+		.set_description('commit suicide')\
+		.register()
+
 
 
 func _input(event):
