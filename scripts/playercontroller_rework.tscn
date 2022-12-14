@@ -1,0 +1,278 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/playercontroller_rework.gd" type="Script" id=1]
+[ext_resource path="res://scripts/playerui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/sway2.gd" type="Script" id=3]
+[ext_resource path="res://models/glock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://audio/sfx/surfaces/concrete_run_os.wav" type="AudioStream" id=6]
+[ext_resource path="res://audio/sfx/surfaces/concrete_fallimpact.wav" type="AudioStream" id=7]
+[ext_resource path="res://models/ak.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 1.15
+
+[sub_resource type="CapsuleMesh" id=2]
+radius = 0.5
+mid_height = 1.5
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head/Hand/Weapons/AK:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -0.322 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head/Hand/Weapons/AK:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Head/Hand/Weapons/Glock:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Head/Hand/Weapons/Glock:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "akFire"
+length = 0.1
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head/Hand/Weapons/AK:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.025, 0.05 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -0.322 ), Vector3( 0, 0.02, -0.322 ), Vector3( 0, 0, -0.322 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head/Hand/Weapons/AK:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.025, 0.05 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 3.508, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "glockFire"
+length = 0.35
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head/Hand/Weapons/Glock:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.025, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -0.311, 0.488 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head/Hand/Weapons/Glock:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.025, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 24.194, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "glockReload"
+length = 0.4
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head/Hand/Weapons/Glock:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head/Hand/Weapons/Glock:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.025, 0.175, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -20, 0, 0 ), Vector3( -15.77, 0, 0 ), Vector3( -20, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "headBob"
+length = 0.4
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath("Head:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.75, 0 ), Vector3( 0, 0.8, 0 ), Vector3( 0, 0.75, 0 ) ]
+}
+
+[node name="Player" type="KinematicBody" groups=["Player"]]
+script = ExtResource( 1 )
+
+[node name="Timers" type="Spatial" parent="."]
+
+[node name="sndRunTimer" type="Timer" parent="Timers"]
+wait_time = 0.4
+one_shot = true
+
+[node name="akShotTimer" type="Timer" parent="Timers"]
+process_mode = 0
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="glockShotTimer" type="Timer" parent="Timers"]
+process_mode = 0
+wait_time = 0.35
+one_shot = true
+autostart = true
+
+[node name="glockReloadTimer" type="Timer" parent="Timers"]
+wait_time = 0.4
+one_shot = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="CeilCheck" type="RayCast" parent="CollisionShape"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25697e-07, -0.771524 )
+enabled = true
+cast_to = Vector3( 0, 0, -0.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+visible = false
+layers = 3
+cast_shadow = 0
+mesh = SubResource( 2 )
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+cull_mask = 1048573
+
+[node name="RayCast" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="Head/Camera"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Viewport" type="Viewport" parent="Head/Camera/ViewportContainer"]
+size = Vector2( 1920, 1080 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="GunCam" type="Camera" parent="Head/Camera/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0 )
+cull_mask = 2
+
+[node name="Hand" type="Spatial" parent="Head"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.096, 0.055, -0.133 )
+script = ExtResource( 3 )
+swayLeft = Vector3( 0, -0.15, 0 )
+swayRight = Vector3( 0, 0.15, 0 )
+swayUp = Vector3( 0.15, 0, 0 )
+swayDown = Vector3( -0.15, 0, 0 )
+
+[node name="Weapons" type="Spatial" parent="Head/Hand"]
+
+[node name="Glock" parent="Head/Hand/Weapons" instance=ExtResource( 5 )]
+
+[node name="AK" parent="Head/Hand/Weapons" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.322 )
+visible = false
+
+[node name="Audio" type="Spatial" parent="."]
+
+[node name="sndRun" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2( 960, 540 )
+stream = ExtResource( 6 )
+volume_db = -20.0
+
+[node name="sndImpact" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2( 960, 540 )
+stream = ExtResource( 7 )
+volume_db = -15.0
+
+[node name="playerUI" parent="." instance=ExtResource( 2 )]
+
+[node name="animPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/akFire = SubResource( 6 )
+anims/glockFire = SubResource( 4 )
+anims/glockReload = SubResource( 7 )
+anims/headBob = SubResource( 5 )
+
+[connection signal="timeout" from="Timers/akShotTimer" to="." method="akShotTimer_timeout"]
+[connection signal="timeout" from="Timers/glockShotTimer" to="." method="glockShotTimer_timeout"]
+[connection signal="timeout" from="Timers/glockReloadTimer" to="." method="glockReloadTimer_timeout"]

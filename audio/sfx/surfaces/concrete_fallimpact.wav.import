@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/concrete_fallimpact.wav-5ddc94b15815e44f7b17f82fd4ace649.sample"
+
+[deps]
+
+source_file="res://audio/sfx/surfaces/concrete_fallimpact.wav"
+dest_files=[ "res://.import/concrete_fallimpact.wav-5ddc94b15815e44f7b17f82fd4ace649.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

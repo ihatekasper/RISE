@@ -1,0 +1,478 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://textures/dev textures/PNG/Dark/texture_06.png" type="Texture" id=1]
+[ext_resource path="res://scripts/playercontroller.tscn" type="PackedScene" id=2]
+[ext_resource path="res://map/powerplant/Floor.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://map/de_powerplant.gd" type="Script" id=4]
+
+[sub_resource type="ProceduralSky" id=3]
+sky_top_color = Color( 0.113725, 0.105882, 0.176471, 1 )
+sky_horizon_color = Color( 0.101961, 0.0705882, 0.0588235, 1 )
+sky_curve = 0.162225
+ground_bottom_color = Color( 0.101961, 0.101961, 0.101961, 1 )
+ground_horizon_color = Color( 0.223529, 0.223529, 0.223529, 1 )
+sun_latitude = 60.79
+sun_longitude = 150.83
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 3 )
+ambient_light_color = Color( 0.270588, 0.337255, 0.686275, 1 )
+ambient_light_energy = 1.38
+ambient_light_sky_contribution = 0.64
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Ceiling" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7116, 4, -24.4404 )
+cast_shadow = 0
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Ceiling"]
+width = 8.0
+height = 0.002
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox9" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 42 )
+width = 8.0
+height = 0.002
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 9 )
+width = 14.0
+height = 0.002
+depth = 14.0
+material = SubResource( 1 )
+
+[node name="CSGBox6" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 21 )
+width = 14.0
+height = 0.002
+depth = 14.0
+material = SubResource( 1 )
+
+[node name="CSGBox15" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 21 )
+width = 10.0
+height = 0.002
+depth = 18.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0 )
+width = 36.0
+height = 0.002
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox8" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 42 )
+width = 36.0
+height = 0.002
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox18" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 29 )
+width = 10.0
+height = 0.002
+material = SubResource( 1 )
+
+[node name="CSGBox5" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7 )
+width = 6.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox7" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 35 )
+width = 6.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox10" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 33 )
+width = 4.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox17" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 34 )
+width = 4.0
+height = 0.002
+depth = 12.0
+material = SubResource( 1 )
+
+[node name="CSGBox19" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 22 )
+width = 4.0
+height = 0.002
+depth = 12.0
+material = SubResource( 1 )
+
+[node name="CSGBox11" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 29 )
+width = 8.0
+height = 0.002
+material = SubResource( 1 )
+
+[node name="CSGBox12" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 11 )
+width = 6.0
+height = 0.002
+material = SubResource( 1 )
+
+[node name="CSGBox14" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 11 )
+width = 6.0
+height = 0.002
+material = SubResource( 1 )
+
+[node name="CSGBox13" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9 )
+width = 4.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="Walls" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2116, 2, -24.4404 )
+use_collision = true
+
+[node name="CSGBox20" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+width = 1.0
+height = 4.0
+depth = 9.0
+material = SubResource( 1 )
+
+[node name="CSGBox30" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 9 )
+width = 1.0
+height = 4.0
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox35" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 9 )
+width = 1.0
+height = 4.0
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox39" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7.5 )
+width = 1.0
+height = 4.0
+depth = 9.0
+material = SubResource( 1 )
+
+[node name="CSGBox42" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 6 )
+width = 1.0
+height = 4.0
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox32" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, -1.5, 11.5 )
+width = 3.0
+height = 1.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox33" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0, 21.5 )
+width = 10.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox45" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1, 21.5 )
+operation = 2
+depth = 1.23547
+material = SubResource( 1 )
+
+[node name="CSGBox46" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 1, 21.5 )
+operation = 2
+depth = 1.23547
+material = SubResource( 1 )
+
+[node name="CSGBox34" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 19.5 )
+width = 1.0
+height = 4.0
+depth = 5.0
+material = SubResource( 1 )
+
+[node name="CSGBox21" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -4.5 )
+width = 10.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox22" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5, 0, -2.5 )
+width = 36.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox25" type="CSGBox" parent="Walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45, 0, 7 )
+width = 20.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox27" type="CSGBox" parent="Walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 0, 7.5 )
+width = 11.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox26" type="CSGBox" parent="Walls"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -37.5, 0, 16.5 )
+width = 14.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox28" type="CSGBox" parent="Walls"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26, 0, 12.5 )
+width = 7.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox43" type="CSGBox" parent="Walls"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.5, 0, 2.5 )
+width = 6.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox44" type="CSGBox" parent="Walls"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.5, 0, 9.5 )
+width = 6.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox29" type="CSGBox" parent="Walls"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25.5, 1.5, 12.5 )
+operation = 2
+width = 4.0
+height = 3.0
+depth = 1.04556
+material = SubResource( 1 )
+
+[node name="CSGBox23" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -3.5 )
+width = 1.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox31" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4.5 )
+width = 1.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox36" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4.5 )
+width = 1.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox41" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 12.5 )
+width = 1.0
+height = 4.0
+depth = 3.0
+material = SubResource( 1 )
+
+[node name="CSGBox38" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 2.5 )
+width = 7.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox40" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 11.5 )
+width = 7.0
+height = 4.0
+depth = 1.0
+material = SubResource( 1 )
+
+[node name="CSGBox37" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 3.5 )
+width = 1.0
+height = 4.0
+depth = 3.0
+material = SubResource( 1 )
+
+[node name="CSGBox16" type="CSGBox" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5003, -0.0215702, 21.0323 )
+height = 4.0
+depth = 18.0
+material = SubResource( 1 )
+
+[node name="Floor" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7116, 0, -24.4404 )
+cast_shadow = 0
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Floor"]
+width = 8.0
+height = 0.002
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox9" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 42 )
+width = 8.0
+height = 0.002
+depth = 8.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 9 )
+width = 14.0
+height = 0.002
+depth = 14.0
+material = SubResource( 1 )
+
+[node name="CSGBox6" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 21 )
+width = 14.0
+height = 0.002
+depth = 14.0
+material = SubResource( 1 )
+
+[node name="CSGBox4" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 21 )
+width = 10.0
+height = 0.002
+depth = 18.0
+material = SubResource( 1 )
+
+[node name="CSGBox15" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 21 )
+width = 10.0
+height = 0.002
+depth = 18.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0 )
+width = 36.0
+height = 0.002
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox8" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 42 )
+width = 36.0
+height = 0.002
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox18" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 29 )
+width = 10.0
+height = 0.002
+material = SubResource( 1 )
+
+[node name="CSGBox5" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7 )
+width = 6.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox7" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 35 )
+width = 6.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox10" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 33 )
+width = 4.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="CSGBox17" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 34 )
+width = 4.0
+height = 0.002
+depth = 12.0
+material = SubResource( 1 )
+
+[node name="CSGBox19" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 22 )
+width = 4.0
+height = 0.002
+depth = 12.0
+material = SubResource( 1 )
+
+[node name="CSGBox11" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 29 )
+width = 8.0
+height = 0.002
+material = SubResource( 1 )
+
+[node name="CSGBox12" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 0, 11 )
+width = 7.0
+height = 0.002
+material = SubResource( 1 )
+
+[node name="CSGBox13" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9 )
+width = 4.0
+height = 0.002
+depth = 10.0
+material = SubResource( 1 )
+
+[node name="Map" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 8, 15, 7 )
+light_color = Color( 0.74902, 0.745098, 0.784314, 1 )
+
+[node name="FPS" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, 17, 1, -27 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7151, 0, -24.4384 )
+visible = false
+mesh = ExtResource( 3 )

@@ -1,0 +1,176 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://font/KGHAPPYSolid.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://textures/dmgtaken2.png" type="Texture" id=2]
+[ext_resource path="res://scripts/playerui.gd" type="Script" id=3]
+[ext_resource path="res://scripts/FPS.gd" type="Script" id=4]
+[ext_resource path="res://textures/xhair01.png" type="Texture" id=5]
+[ext_resource path="res://textures/hitmarker_white.png" type="Texture" id=6]
+[ext_resource path="res://scripts/velocity.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 72
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("crosshair/hitmarker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dmg_screen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "hitmarker"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("crosshair/hitmarker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "pain"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("dmg_screen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="playerUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="dmg_screen" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="FPS" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 7.0
+margin_right = 371.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( 686, 239 )
+theme = SubResource( 4 )
+text = "240 fps"
+scroll_active = false
+script = ExtResource( 4 )
+
+[node name="velocity" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 39.0
+margin_right = 373.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 686, 239 )
+theme = SubResource( 4 )
+text = "vel: 0"
+scroll_active = false
+script = ExtResource( 7 )
+
+[node name="Health" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -123.0
+margin_right = 424.0
+margin_bottom = -16.0
+theme = SubResource( 2 )
+text = "+ 100"
+scroll_active = false
+
+[node name="Ammo" type="RichTextLabel" parent="."]
+anchor_left = 0.89
+anchor_top = 1.0
+anchor_right = 0.89
+anchor_bottom = 1.0
+margin_left = -174.8
+margin_top = -107.0
+margin_right = 177.2
+rect_pivot_offset = Vector2( 469, 52.783 )
+theme = SubResource( 2 )
+text = "99 / 99"
+scroll_active = false
+
+[node name="crosshair" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.0
+margin_top = -62.0
+margin_right = 438.0
+margin_bottom = 438.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="hitmarker" type="TextureRect" parent="crosshair"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -74.0
+margin_right = 454.0
+margin_bottom = 454.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.29, 0.29 )
+texture = ExtResource( 6 )
+
+[node name="uiAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/hitmarker = SubResource( 6 )
+anims/pain = SubResource( 7 )

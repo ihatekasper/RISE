@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://models/dummymale.glb" type="PackedScene" id=1]
+[ext_resource path="res://models/dummys.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.484247
+height = 1.30603
+
+[node name="Dummy" type="KinematicBody" groups=["Enemy"]]
+script = ExtResource( 2 )
+
+[node name="dummy01" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, 1.1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.1, 0 )
+shape = SubResource( 1 )

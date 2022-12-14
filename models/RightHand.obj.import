@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/RightHand.obj-061f90742d43c9a2f8cb9574b6edb44c.mesh"
+
+[deps]
+
+files=[ "res://.import/RightHand.obj-061f90742d43c9a2f8cb9574b6edb44c.mesh" ]
+
+source_file="res://models/RightHand.obj"
+dest_files=[ "res://.import/RightHand.obj-061f90742d43c9a2f8cb9574b6edb44c.mesh", "res://.import/RightHand.obj-061f90742d43c9a2f8cb9574b6edb44c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

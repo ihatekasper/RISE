@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/concrete_run_os.wav-02d37c1ca91a5f7ed5117e0cd0213dda.sample"
+
+[deps]
+
+source_file="res://audio/sfx/surfaces/concrete_run_os.wav"
+dest_files=[ "res://.import/concrete_run_os.wav-02d37c1ca91a5f7ed5117e0cd0213dda.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

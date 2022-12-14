@@ -1,0 +1,251 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "ChatMessage",
+"language": "GDScript",
+"path": "res://addons/discord_game_sdk/example/lobby/chat_message.gd"
+}, {
+"base": "",
+"class": "DiscordActivity",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity.gdns"
+}, {
+"base": "",
+"class": "DiscordActivityAssets",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_assets.gdns"
+}, {
+"base": "",
+"class": "DiscordActivityManager",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_manager.gdns"
+}, {
+"base": "",
+"class": "DiscordActivityParty",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_party.gdns"
+}, {
+"base": "",
+"class": "DiscordActivitySecrets",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_secrets.gdns"
+}, {
+"base": "",
+"class": "DiscordActivityTimestamps",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_activity_timestamps.gdns"
+}, {
+"base": "",
+"class": "DiscordCore",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_core.gdns"
+}, {
+"base": "",
+"class": "DiscordLobby",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_lobby.gdns"
+}, {
+"base": "",
+"class": "DiscordLobbyManager",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_lobby_manager.gdns"
+}, {
+"base": "",
+"class": "DiscordLobbyTransaction",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_lobby_transaction.gdns"
+}, {
+"base": "",
+"class": "DiscordOverlayManager",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_overlay_manager.gdns"
+}, {
+"base": "",
+"class": "DiscordPartySize",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_party_size.gdns"
+}, {
+"base": "",
+"class": "DiscordResult",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_result.gdns"
+}, {
+"base": "",
+"class": "DiscordUser",
+"language": "NativeScript",
+"path": "res://addons/discord_game_sdk/discord_user.gdns"
+}, {
+"base": "Resource",
+"class": "GameState",
+"language": "GDScript",
+"path": "res://addons/discord_game_sdk/example/lobby/game_state.gd"
+}, {
+"base": "Resource",
+"class": "Member",
+"language": "GDScript",
+"path": "res://addons/discord_game_sdk/example/lobby/member.gd"
+} ]
+_global_script_class_icons={
+"ChatMessage": "",
+"DiscordActivity": "",
+"DiscordActivityAssets": "",
+"DiscordActivityManager": "",
+"DiscordActivityParty": "",
+"DiscordActivitySecrets": "",
+"DiscordActivityTimestamps": "",
+"DiscordCore": "",
+"DiscordLobby": "",
+"DiscordLobbyManager": "",
+"DiscordLobbyTransaction": "",
+"DiscordOverlayManager": "",
+"DiscordPartySize": "",
+"DiscordResult": "",
+"DiscordUser": "",
+"GameState": "",
+"Member": ""
+}
+
+[application]
+
+config/name="RISE"
+run/main_scene="res://map/dm_arcade.tscn"
+boot_splash/image="res://img/studiokoulisplash.png"
+config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://scripts/global.gd"
+Console="*res://addons/quentincaffeino/console/src/Console.tscn"
+Discord="*res://addons/discord_game_sdk/discord.gd"
+
+[debug]
+
+settings/fps/force_fps=240
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/size/test_width=1920
+window/size/test_height=1080
+window/vsync/use_vsync=false
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/CSGExport/plugin.cfg", "res://addons/discord_game_sdk/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg" )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+forward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+backward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+strafeleft={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+straferight={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+crouch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+walk={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+fire={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+weapon_primary={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+weapon_secondary={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+weapon_melee={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_toggle={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":96,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_autocomplete={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_history_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_history_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+reload={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/physics_fps=241
+common/physics_jitter_fix=1.0
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/shadows/filter_mode=2
+quality/filters/anisotropic_filter_level=8
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/AssaultRifle_01.obj-2ea9f3225c7b49e7f7b424e86c922494.mesh"
+
+[deps]
+
+files=[ "res://.import/AssaultRifle_01.obj-2ea9f3225c7b49e7f7b424e86c922494.mesh" ]
+
+source_file="res://weapons/AssaultRifle_01.obj"
+dest_files=[ "res://.import/AssaultRifle_01.obj-2ea9f3225c7b49e7f7b424e86c922494.mesh", "res://.import/AssaultRifle_01.obj-2ea9f3225c7b49e7f7b424e86c922494.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

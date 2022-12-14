@@ -1,0 +1,34 @@
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[ext_resource path="res://font/KGHAPPYSolid.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0.196078 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 1, 1, 0.294118 )
+
+[resource]
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.741176, 0.741176, 0.741176, 0.2 )
+Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 0.847059, 0.776471, 1, 1 )
+Button/colors/font_color_pressed = Color( 0.631373, 0.541176, 1, 1 )
+Button/constants/hseparation = 12
+Button/fonts/font = SubResource( 5 )
+Button/styles/disabled = SubResource( 6 )
+Button/styles/focus = SubResource( 7 )
+Button/styles/hover = SubResource( 8 )
+Button/styles/normal = SubResource( 9 )
+Button/styles/pressed = SubResource( 10 )
