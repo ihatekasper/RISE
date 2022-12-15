@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/riseDevIcon.png-f3501d0bbfca6215b9bfb8aaea152b55.stex"
+path="res://.import/wrench.png-3f0fbc39b486d25b5f420319067d9f00.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/riseDevIcon.png"
-dest_files=[ "res://.import/riseDevIcon.png-f3501d0bbfca6215b9bfb8aaea152b55.stex" ]
+source_file="res://interface/img/wrench.png"
+dest_files=[ "res://.import/wrench.png-3f0fbc39b486d25b5f420319067d9f00.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icontransparent.png-8b7ac3c25588f3a27cba69c9ec22d15d.stex"
+path="res://.import/wrenchIcon.png-fd798180c70cb21ef97273c1d3a49a3c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/icontransparent.png"
-dest_files=[ "res://.import/icontransparent.png-8b7ac3c25588f3a27cba69c9ec22d15d.stex" ]
+source_file="res://interface/img/wrenchIcon.png"
+dest_files=[ "res://.import/wrenchIcon.png-fd798180c70cb21ef97273c1d3a49a3c.stex" ]
 
 [params]
 

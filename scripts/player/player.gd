@@ -1,9 +1,7 @@
 extends KinematicBody
 
-
 export var health = 100
 var curr_max_health = 100
-onready var healthLabel = $playerUI/Health
 export var dmg = 25
 var speed = 5.1
 var walk_speed = 2.5
@@ -40,14 +38,13 @@ onready var gunCam = $Head/Camera/ViewportContainer/Viewport/GunCam
 onready var raycast = $Head/Camera/RayCast
 onready var ui_anim = $playerUI/uiAnim
 onready var player_anim = $animPlayer
-
+onready var healthLabel = $playerUI/Health
 onready var glockLight = $Head/Hand/Weapons/Glock/Muzzlelight
 onready var glockFlash = $Head/Hand/Weapons/Glock/MuzzleFlash
 onready var glockTimer = $Timers/glockShotTimer
 
-onready var bullet_decal = preload("res://scripts/bullet_decal.tscn")
+onready var bullet_decal = preload("res://weapons/bullet_decal.tscn")
 onready var blood_splatter = preload("res://scripts/decals/blood_splatter.tscn")
-
 # - Weapons
 export var glockAmmo = 15
 export var glockReserve = 30
@@ -78,15 +75,12 @@ func _ready():
 		.set_description('commit suicide')\
 		.register()
 
-
-
 func _input(event):
 # - Get mouse input for camera rotation
 	if event is InputEventMouseMotion and not Console.is_console_shown:
 		rotate_y(deg2rad(-event.relative.x * mouse_sens))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(89))
-
 # - Respawn on death
 func respawn():
 	self.translation = Vector3(0, 23, 0)
@@ -260,9 +254,8 @@ func _physics_process(delta):
 	var h_rot = global_transform.basis.get_euler().y
 	var f_input = Input.get_action_strength("backward") - Input.get_action_strength("forward")
 	var h_input = Input.get_action_strength("straferight") - Input.get_action_strength("strafeleft")
-	direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
-	
-	
+	direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot)
+
 	# - Jumping and gravity
 	if is_on_floor():
 		snap = -get_floor_normal()
@@ -279,7 +272,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") or Input.is_action_just_released("jump") and is_on_floor():
 		snap = Vector3.ZERO
 		gravity_vec = Vector3.UP * jump
-	
+
 	# - Make it move
 	if Input.get_action_strength("walk") and is_on_floor():
 		velocity = velocity.linear_interpolate(direction * walk_speed, accel * delta)
@@ -302,9 +295,8 @@ func _physics_process(delta):
 		velocity = velocity.linear_interpolate(direction * speed, accel * delta)
 		movement = velocity + gravity_vec
 	pcap.shape.height = clamp(pcap.shape.height, crouch_height, default_height)
-
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
-	
+
 	# - Fall damage
 	if is_on_floor():
 		if gravity_vec.length() >= 20:

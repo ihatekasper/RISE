@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/studiokoulisplash.png-7c7969e796c245cf2c5e90a06632ef64.stex"
+path="res://.import/logo.png-497790160d8bc7c1d5183213a1f0ef35.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/studiokoulisplash.png"
-dest_files=[ "res://.import/studiokoulisplash.png-7c7969e796c245cf2c5e90a06632ef64.stex" ]
+source_file="res://interface/img/logo.png"
+dest_files=[ "res://.import/logo.png-497790160d8bc7c1d5183213a1f0ef35.stex" ]
 
 [params]
 

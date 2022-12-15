@@ -118,12 +118,11 @@ _global_script_class_icons={
 
 config/name="RISE"
 run/main_scene="res://map/menu_main.tscn"
-boot_splash/image="res://img/studiokoulisplash.png"
+boot_splash/image="res://interface/img/studiokoulisplash.png"
 config/icon="res://icon.png"
 
 [autoload]
 
-global="*res://scripts/global.gd"
 Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 Discord="*res://addons/discord_game_sdk/discord.gd"
 

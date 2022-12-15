@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/risepurple.png-bd7f005fd8233e425891ab09862ab434.stex"
+path="res://.import/risered.png-99f1966139ce90527c4881142c5e0c1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/risepurple.png"
-dest_files=[ "res://.import/risepurple.png-bd7f005fd8233e425891ab09862ab434.stex" ]
+source_file="res://interface/img/risered.png"
+dest_files=[ "res://.import/risered.png-99f1966139ce90527c4881142c5e0c1e.stex" ]
 
 [params]
 

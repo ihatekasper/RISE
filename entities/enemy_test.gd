@@ -5,24 +5,25 @@ enum {
 	CHASE,
 	AIM,
 	SHOOT,
-	STUN,
 	DEAD
 }
 
-var health = 100
+export var health = 100
+var curr_max_health = 100
 var is_alive = true
 var path = []
 var path_node = 0
 var speed = 3.5
-var dmg = 5
+var dmg = 3
 var can_shoot = true
+var anim_played = false
 const turn_speed = 3
 
 onready var nav = get_parent()
 onready var player = $"../../Player"
 onready var target = player
-onready var vision_cast = $eyes/VisionCast
-onready var shoot_cast = $eyes/ShootCast
+onready var vision_cast = $VisionCast
+onready var shoot_cast = $ShootCast
 onready var animplayer = $SWAT/AnimationPlayer
 onready var eyes = $eyes
 onready var skeleton = $SWAT/RootNode/CharacterArmature/Skeleton
@@ -30,10 +31,17 @@ onready var skeleton = $SWAT/RootNode/CharacterArmature/Skeleton
 var state = IDLE
 
 func _ready():
-	animplayer.play("CharacterArmature|Idle")
+	state = IDLE
 	pass
 
 func _process(delta):
+	if health != curr_max_health:
+		animplayer.play("CharacterArmature|HitRecieve_2")
+		curr_max_health = health
+		$shotTimer.stop()
+		$stunTimer.start()
+		Console.write_line("STUNNED")
+	
 	match state:
 		IDLE:
 			animplayer.play("CharacterArmature|Idle")
@@ -43,29 +51,37 @@ func _process(delta):
 			animplayer.play("CharacterArmature|Walk")
 
 		AIM:
-			animplayer.play("CharacterArmature|Idle_Gun_Pointing")
+			pass
 
 		SHOOT:
 			target.health -= dmg
-			animplayer.play("CharacterArmature|Idle_Gun_Shoot")
+			if anim_played == false:
+				$Audio/Fire.pitch_scale = rand_range(0.8, 1.2)
+				$Audio/Fire.play()
+				animplayer.play("CharacterArmature|Idle_Gun_Shoot")
+				anim_played = true
 			can_shoot = false
-
-		STUN:
-			animplayer.play("CharacterArmature|HitRecieve_2")
 
 		DEAD:
 			pass
 
 
 	if is_alive:
-		self.look_at(target.global_transform.origin, Vector3.UP)
-		#rotate_y(deg2rad(self.rotation.y * turn_speed))
+		eyes.look_at(target.global_transform.origin, Vector3.UP)
+		rotate_y(deg2rad(eyes.rotation.y * turn_speed))
 	if health <= 0 and is_alive:
 		is_alive = false
 		animplayer.play("CharacterArmature|Death")
 		$modelTimer.start()
 		$CollisionShape.queue_free()
 		state = DEAD
+		
+	if $walkSndTimer.time_left <= 0:
+		if state == CHASE:
+			$Audio/Walk.pitch_scale = rand_range(0.8, 1.2)
+			$Audio/Walk.play()
+			$walkSndTimer.start(0.4)
+
 
 func _physics_process(delta):
 
@@ -98,6 +114,10 @@ func timerTimeout():
 
 func shotTimer_timeout():
 	can_shoot = true
+	anim_played = false
 
 func modelTimer_timeout():
 	queue_free()
+
+func stunTimer_timeout():
+	$shotTimer.start()

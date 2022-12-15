@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://weapons/Pistol_02.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://models/glock.gd" type="Script" id=2]
+[ext_resource path="res://models/Pistol_02.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://weapons/secondary/Glock/glock.gd" type="Script" id=2]
 [ext_resource path="res://models/RightHand.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://audio/sfx/weapons/gun_shot.wav" type="AudioStream" id=4]
 [ext_resource path="res://audio/sfx/weapons/glock_reload.wav" type="AudioStream" id=5]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/kenney_prototypes/assets/colors/dark/materials/material_001.tres" type="Material" id=1]
-[ext_resource path="res://scripts/playercontroller_rework.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://font/KGHAPPYSolid.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://addons/kenney_prototypes/assets/cube/cube.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/dummy_hitboxes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/kenney_prototypes/assets/colors/red/materials/material_009.tres" type="Material" id=6]
 [ext_resource path="res://addons/kenney_prototypes/assets/colors/light/materials/material_009.tres" type="Material" id=7]
 [ext_resource path="res://interface/basic/PNG/grey_button02.png" type="Texture" id=8]
@@ -34,9 +33,6 @@ extents = Vector3( 1.5, 1.5, 1.5 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 9 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 23.25, 7 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
@@ -466,8 +462,8 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.5, 22, 5.5 )
 [node name="Cube2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -13, 24, 1 )
 
-[node name="KinematicBody" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 23, -8.5 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.25, 0 )
 
 [connection signal="body_entered" from="BtnArea" to="." method="BtnArea_body_entered"]
 [connection signal="body_exited" from="BtnArea" to="." method="BtnArea_body_exited"]

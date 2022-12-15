@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menubg.png-afcfd5398ca20f0ef777147777d8bf60.stex"
+path="res://.import/riseDevIcon.png-7732cb10a3d458575b14a8288f372dca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/menubg.png"
-dest_files=[ "res://.import/menubg.png-afcfd5398ca20f0ef777147777d8bf60.stex" ]
+source_file="res://interface/img/riseDevIcon.png"
+dest_files=[ "res://.import/riseDevIcon.png-7732cb10a3d458575b14a8288f372dca.stex" ]
 
 [params]
 

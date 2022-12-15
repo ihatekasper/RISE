@@ -1,10 +1,12 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/enemy_test.gd" type="Script" id=1]
 [ext_resource path="res://models/Visor.material" type="Material" id=2]
 [ext_resource path="res://models/Skin.material" type="Material" id=3]
 [ext_resource path="res://models/Swat.material" type="Material" id=4]
 [ext_resource path="res://models/Swat_Black.material" type="Material" id=5]
+[ext_resource path="res://audio/sfx/weapons/gun_shot.wav" type="AudioStream" id=6]
+[ext_resource path="res://audio/sfx/surfaces/concrete_run_os.wav" type="AudioStream" id=7]
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "Root Scene_Swat_Legs"
@@ -7039,70 +7041,70 @@ bones/61/enabled = true
 bones/61/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( 0.999985, -0.00274642, -0.00481735, -0.0051796, -0.152304, -0.988321, 0.00198042, 0.988329, -0.152316, 3.87752e-05, -0.000999364, 0.0154606 )
+transform = Transform( 0.999985, -0.00238659, -0.00490587, -0.0051475, -0.114759, -0.993381, 0.00180758, 0.99339, -0.11477, 3.90365e-05, -0.000938554, 0.0154705 )
 bone_name = "Head"
 
 [node name="Head_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment"]
 transform = Transform( 1, 3.25261e-19, 4.5139e-36, -3.25261e-19, 1, 1.38778e-17, 0, -1.38778e-17, 1, -8.67362e-21, 0.00254273, -1.38778e-19 )
 
 [node name="BoneAttachment2" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( -0.0116689, -0.1499, 0.988633, -0.999598, 0.0273087, -0.00765816, -0.0258511, -0.988324, -0.150159, 0.00278638, -0.000455978, 0.00801422 )
+transform = Transform( 0.45592, -0.693192, -0.558232, -0.857619, -0.174468, -0.483788, 0.237963, 0.699319, -0.674038, 0.00252819, -0.000249055, 0.0079843 )
 bone_name = "Index4.L"
 
 [node name="Index4L_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment2"]
 transform = Transform( 1, 8.67362e-19, -1.8949e-35, -8.67362e-19, 1, -2.18467e-17, 0, 2.18467e-17, 1, -6.93889e-20, 0.000265756, -8.32667e-19 )
 
 [node name="BoneAttachment3" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( -0.0176732, -0.236317, 0.971515, -0.999602, -0.0172766, -0.0223871, 0.0220736, -0.971522, -0.235918, 0.00281298, -0.000157817, 0.00784267 )
+transform = Transform( 0.23708, -0.479038, -0.845172, -0.968272, -0.187287, -0.165457, -0.0790307, 0.857582, -0.50824, 0.00251594, 4.99601e-05, 0.0078126 )
 bone_name = "Middle4.L"
 
 [node name="Middle4L_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment3"]
 transform = Transform( 1, 6.93889e-18, 1.38778e-17, -6.93889e-18, 1, -4.55365e-17, -1.38778e-17, 4.55365e-17, 1, 0, 0.000273641, 4.16334e-19 )
 
 [node name="BoneAttachment4" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( -0.289076, -0.38518, 0.876398, -0.953945, 0.192554, -0.230027, -0.0801525, -0.902529, -0.423102, 0.0027293, 0.000220756, 0.00803683 )
+transform = Transform( 0.769541, -0.575614, -0.276544, -0.598786, -0.499887, -0.625755, 0.221952, 0.647133, -0.729352, 0.00240167, 0.00041803, 0.00801132 )
 bone_name = "Ring4.L"
 
 [node name="Ring4L_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment4"]
 transform = Transform( 1, -2.77556e-17, 1.73334e-33, 2.77556e-17, 1, -6.245e-17, 0, 6.245e-17, 1, 0, 0.000315054, -4.16334e-19 )
 
 [node name="BoneAttachment5" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( 0.0133839, -0.491294, 0.870892, -0.992523, 0.0991546, 0.0711899, -0.121329, -0.865332, -0.486293, 0.00268046, 0.000375177, 0.00827914 )
+transform = Transform( 0.160406, 0.972911, 0.166479, -0.967432, 0.188428, -0.169033, -0.195824, -0.133943, 0.971449, 0.00212516, 0.000395124, 0.00894183 )
 bone_name = "Pinky4.L"
 
 [node name="Pinky4L_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment5"]
 transform = Transform( 1, 1.38778e-17, 5.20417e-18, -1.38778e-17, 1, 2.19009e-17, -5.20417e-18, -2.19009e-17, 1, -1.38778e-19, 0.000220305, 0 )
 
 [node name="BoneAttachment6" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( -0.0892837, 0.00757167, 0.995978, -0.961469, -0.261704, -0.0842016, 0.260012, -0.965119, 0.0306457, 0.00265898, -0.000920674, 0.00892817 )
+transform = Transform( -0.444661, -0.0199628, 0.895477, -0.891153, -0.0907422, -0.444538, 0.0901302, -0.995674, 0.0225593, 0.00228036, -0.000550185, 0.00880369 )
 bone_name = "Thumb3.L"
 
 [node name="Thumb3L_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment6"]
 transform = Transform( 1, -2.77556e-17, 2.77556e-17, 2.77556e-17, 1, 6.245e-17, -2.77556e-17, -6.245e-17, 1, -2.77556e-19, 0.000330278, 1.38778e-19 )
 
 [node name="BoneAttachment7" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( -0.0615839, 0.978384, -0.197417, -0.174474, -0.205299, -0.963022, -0.982734, -0.0248629, 0.183344, -0.00162768, -0.00700842, 0.0135991 )
+transform = Transform( 0.0620812, 0.577739, 0.813858, -0.0544741, 0.816177, -0.575229, -0.996583, -0.0086215, 0.0821398, -0.00135831, -0.00682965, 0.0135706 )
 bone_name = "Index4.R"
 
 [node name="Index4R_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment7"]
 transform = Transform( 1, 1.54074e-33, -5.55112e-17, 0, 1, 2.77556e-17, 5.55112e-17, -2.77556e-17, 1, -5.55111e-19, 0.000265756, -4.16334e-19 )
 
 [node name="BoneAttachment8" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( -0.248144, 0.369081, 0.895658, 0.113083, 0.929291, -0.351611, -0.962099, 0.0140353, -0.272335, -0.00127558, -0.00688334, 0.0132604 )
+transform = Transform( -0.248144, 0.369081, 0.895658, 0.113083, 0.929291, -0.351611, -0.962099, 0.0140354, -0.272335, -0.00127558, -0.00688334, 0.0132604 )
 bone_name = "Middle4.R"
 
 [node name="Middle4R_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment8"]
 transform = Transform( 1, 1.38778e-17, 5.55112e-17, -1.38778e-17, 1, -4.85723e-17, -5.55112e-17, 4.85723e-17, 1, 0, 0.000273641, -1.38778e-19 )
 
 [node name="BoneAttachment9" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( 0.374001, 0.587989, 0.717211, -0.199152, 0.806211, -0.557101, -0.905792, 0.0655227, 0.418621, -0.0013629, -0.00682427, 0.013044 )
+transform = Transform( 0.294626, -0.748613, 0.593948, 0.574571, 0.635416, 0.515863, -0.763583, 0.189279, 0.617341, -0.00119574, -0.00606159, 0.013156 )
 bone_name = "Ring4.R"
 
 [node name="Ring4R_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment9"]
 transform = Transform( 1, -1.38778e-17, 1.66533e-16, 1.38778e-17, 1, -3.1225e-17, -1.66533e-16, 3.1225e-17, 1, 2.77556e-19, 0.000315054, 1.38778e-19 )
 
 [node name="BoneAttachment10" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( -0.0828477, 0.951491, 0.296316, 0.0583062, 0.301456, -0.951696, -0.994854, -0.0615669, -0.0804539, -0.00148538, -0.00669054, 0.012822 )
+transform = Transform( -0.0686694, 0.127053, 0.989517, 0.124278, 0.985221, -0.117877, -0.989867, 0.114882, -0.0834433, -0.00121216, -0.00619407, 0.0128381 )
 bone_name = "Pinky4.R"
 
 [node name="Pinky4R_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment10"]
@@ -7130,28 +7132,28 @@ bone_name = "LowerLeg.R"
 transform = Transform( 1, 6.93889e-18, -2.40741e-35, -6.93889e-18, 1, -3.46945e-18, 0, 3.46945e-18, 1, 0, 0.00511121, -2.77556e-19 )
 
 [node name="BoneAttachment14" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( 0.518087, 0.855316, 0.00460301, 0.855328, -0.51808, -0.00272262, 5.59814e-05, 0.00534761, -0.999986, 0.00120592, 0.00114739, 0.000227517 )
+transform = Transform( 1, 8.35214e-08, 5.48329e-05, -3.99346e-05, 0.688747, 0.725002, -3.78741e-05, -0.725002, 0.688747, 0.00120592, 0.00471557, 0.00559615 )
 bone_name = "Foot.L"
 
 [node name="FootL_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment14"]
 transform = Transform( 1, -5.55112e-17, 4.81482e-35, 5.55112e-17, 1, -8.67362e-19, 0, 8.67362e-19, 1, 0, 0.00177336, 3.46945e-20 )
 
 [node name="BoneAttachment15" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( 1, -1.27489e-09, 6.79493e-05, 6.79483e-05, 0.0053474, -0.999986, -3.62077e-07, 0.999986, 0.0053474, 0.00568219, -0.00299366, 0.00626512 )
+transform = Transform( 1, -1.27489e-09, 6.79493e-05, 6.79483e-05, 0.0053474, -0.999986, -3.62077e-07, 0.999986, 0.0053474, 0.0014239, -0.00700931, 0.00420552 )
 bone_name = "PT.L"
 
 [node name="PTL_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment15"]
 transform = Transform( 1, -3.52648e-38, -4.06576e-20, 0, 1, -8.67362e-19, 4.06576e-20, 8.67362e-19, 1, 1.11022e-18, 0.00177336, 0 )
 
 [node name="BoneAttachment16" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( 0.993316, 0.11543, 0.000561752, 0.115431, -0.993301, -0.00531822, -5.58954e-05, 0.00534749, -0.999986, -0.000685071, -0.00245975, 0.000227517 )
+transform = Transform( 0.993316, 0.11543, 0.000561752, 0.115431, -0.993301, -0.00531822, -5.58954e-05, 0.00534749, -0.999986, -0.000685071, -0.00191691, 0.000227517 )
 bone_name = "Foot.R"
 
 [node name="FootR_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment16"]
 transform = Transform( 1, -1.38778e-17, -1.0842e-19, 1.38778e-17, 1, -8.67362e-19, 1.0842e-19, 8.67362e-19, 1, 1.38778e-19, 0.00177336, -3.46945e-20 )
 
 [node name="BoneAttachment17" type="BoneAttachment" parent="SWAT/RootNode/CharacterArmature/Skeleton"]
-transform = Transform( 1, -1.27493e-09, -6.79493e-05, -6.79483e-05, 0.0053474, -0.999986, 3.64627e-07, 0.999986, 0.0053474, -0.000181656, -0.0073123, 0.00423264 )
+transform = Transform( 1, -1.2749e-09, -6.79493e-05, -6.79483e-05, 0.0053474, -0.999986, 3.64627e-07, 0.999986, 0.0053474, -0.0008337, -0.0073123, 0.00423264 )
 bone_name = "PT.R"
 
 [node name="PTR_end" type="Spatial" parent="SWAT/RootNode/CharacterArmature/Skeleton/BoneAttachment17"]
@@ -7206,18 +7208,12 @@ shape = SubResource( 1 )
 [node name="eyes" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 
-[node name="VisionCast" type="RayCast" parent="eyes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298428, 0 )
-enabled = true
-cast_to = Vector3( 0, 0, -20 )
-
-[node name="ShootCast" type="RayCast" parent="eyes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255744, 0 )
-enabled = true
-cast_to = Vector3( 0, 0, -10 )
-
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="walkSndTimer" type="Timer" parent="."]
+
+[node name="stunTimer" type="Timer" parent="."]
 
 [node name="shotTimer" type="Timer" parent="."]
 autostart = true
@@ -7225,6 +7221,30 @@ autostart = true
 [node name="modelTimer" type="Timer" parent="."]
 wait_time = 30.0
 
+[node name="VisionCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0.798428, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+
+[node name="ShootCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0.755744, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -10 )
+
+[node name="Audio" type="Spatial" parent="."]
+
+[node name="Fire" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573725, -0.88491 )
+stream = ExtResource( 6 )
+unit_db = -5.0
+unit_size = 5.0
+max_db = 1.0
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.724348, -0.52347 )
+stream = ExtResource( 7 )
+
 [connection signal="timeout" from="Timer" to="." method="timerTimeout"]
+[connection signal="timeout" from="stunTimer" to="." method="stunTimer_timeout"]
 [connection signal="timeout" from="shotTimer" to="." method="shotTimer_timeout"]
 [connection signal="timeout" from="modelTimer" to="." method="modelTimer_timeout"]

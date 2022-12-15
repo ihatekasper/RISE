@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/riseDevIcon2.png-49b31f2f475c08e29bcdbe71caea435a.stex"
+path="res://.import/studiokoulisplash.png-9251564676fa4575dba3080344a0afda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/riseDevIcon2.png"
-dest_files=[ "res://.import/riseDevIcon2.png-49b31f2f475c08e29bcdbe71caea435a.stex" ]
+source_file="res://interface/img/studiokoulisplash.png"
+dest_files=[ "res://.import/studiokoulisplash.png-9251564676fa4575dba3080344a0afda.stex" ]
 
 [params]
 

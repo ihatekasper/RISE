@@ -1,7 +1,7 @@
 extends Spatial
 
 onready var intPrompt = $BtnArea/interactPrompt
-onready var predummy = preload("res://scripts/dummy.tscn")
+onready var predummy = preload("res://scripts/deprecated/dummy.tscn")
 onready var dummyspawn = $dummySpawn
 
 var inBtnArea = false
