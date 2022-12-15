@@ -23,11 +23,11 @@ func _input(event):
 		mouseMovementX = event.relative.y
 
 func _process(delta):
-	#if player.gravity_vec.length() != null:
-	#	rotation = rotation.linear_interpolate(swayUp, player.gravity_vec.length() * 1.5 * swayLerp * delta)
-	#elif player.gravity_vec.length() <= 1:
-	#	mouseMovementX = 0
-	#	mouseMovementY = 0
+	if player.gravity_vec.length() != null:
+		rotation = rotation.linear_interpolate(swayUp, player.gravity_vec.length() * 1.5 * swayLerp * delta)
+	elif player.gravity_vec.length() <= 1:
+		mouseMovementX = 0
+		mouseMovementY = 0
 	
 	if mouseMovementY != null or mouseMovementX != null:
 		if mouseMovementY > swayThreshold:

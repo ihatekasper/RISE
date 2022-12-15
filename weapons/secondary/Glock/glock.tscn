@@ -30,6 +30,12 @@ process_mode = 0
 wait_time = 0.1
 autostart = true
 
+[node name="glockShotTimer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.35
+one_shot = true
+autostart = true
+
 [node name="Muzzlelight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638163, -0.443816, -1.36233 )
 layers = 3

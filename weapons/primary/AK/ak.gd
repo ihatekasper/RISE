@@ -1,7 +1,7 @@
 extends Spatial
 
 onready var muzzleLight = $Muzzlelight
-onready var muzzleFlash = $MuzzleFlash2
+onready var muzzleFlash = $MuzzleFlash
 
 func _ready():
 	muzzleLight.hide()

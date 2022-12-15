@@ -29,66 +29,72 @@ process_mode = 0
 wait_time = 0.1
 autostart = true
 
+[node name="akShotTimer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.1
+one_shot = true
+autostart = true
+
 [node name="Muzzlelight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638163, -0.443816, -1.78006 )
 layers = 3
 light_color = Color( 1, 0.921569, 0.0980392, 1 )
 omni_range = 1.5
 
-[node name="MuzzleFlash2" type="Spatial" parent="."]
+[node name="MuzzleFlash" type="Spatial" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 3.451, 0.706822, -0.4954, -2.21707 )
 
-[node name="Yellow" type="Spatial" parent="MuzzleFlash2"]
+[node name="Yellow" type="Spatial" parent="MuzzleFlash"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.00459588, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash2/Yellow"]
+[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash/Yellow"]
 layers = 2
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 2 )
 
-[node name="Orange" type="Spatial" parent="MuzzleFlash2"]
+[node name="Orange" type="Spatial" parent="MuzzleFlash"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.00459588, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash2/Orange"]
+[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash/Orange"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0479598, 0 )
 layers = 2
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 4 )
 
-[node name="Yellow2" type="Spatial" parent="MuzzleFlash2"]
+[node name="Yellow2" type="Spatial" parent="MuzzleFlash"]
 transform = Transform( 0.5, -3.78552e-08, 0.866025, -0.866025, -2.18557e-08, 0.5, 0, -1, -4.37114e-08, -5.96046e-08, -0.00459588, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash2/Yellow2"]
+[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash/Yellow2"]
 layers = 2
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 2 )
 
-[node name="Orange2" type="Spatial" parent="MuzzleFlash2"]
+[node name="Orange2" type="Spatial" parent="MuzzleFlash"]
 transform = Transform( 0.5, -3.78552e-08, 0.866025, -0.866025, -2.18557e-08, 0.5, 0, -1, -4.37114e-08, -5.96046e-08, -0.00459588, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash2/Orange2"]
+[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash/Orange2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0479598, 0 )
 layers = 2
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 4 )
 
-[node name="Yellow3" type="Spatial" parent="MuzzleFlash2"]
+[node name="Yellow3" type="Spatial" parent="MuzzleFlash"]
 transform = Transform( -0.5, -3.78552e-08, 0.866025, -0.866025, 2.18557e-08, -0.5, 0, -1, -4.37114e-08, -1.19209e-07, -0.00459588, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash2/Yellow3"]
+[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash/Yellow3"]
 layers = 2
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 2 )
 
-[node name="Orange3" type="Spatial" parent="MuzzleFlash2"]
+[node name="Orange3" type="Spatial" parent="MuzzleFlash"]
 transform = Transform( -0.5, -3.78552e-08, 0.866025, -0.866025, 2.18557e-08, -0.5, 0, -1, -4.37114e-08, -1.19209e-07, -0.00459588, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash2/Orange3"]
+[node name="MeshInstance" type="MeshInstance" parent="MuzzleFlash/Orange3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0479598, 0 )
 layers = 2
 mesh = SubResource( 3 )

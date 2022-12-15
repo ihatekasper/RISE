@@ -3,6 +3,7 @@
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=1]
 [ext_resource path="res://scripts/player/playerui.tscn" type="PackedScene" id=2]
 [ext_resource path="res://weapons/sway2.gd" type="Script" id=3]
+[ext_resource path="res://weapons/weapon_manager.gd" type="Script" id=4]
 [ext_resource path="res://weapons/secondary/Glock/glock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://audio/sfx/surfaces/concrete_run_os.wav" type="AudioStream" id=6]
 [ext_resource path="res://audio/sfx/surfaces/concrete_fallimpact.wav" type="AudioStream" id=7]
@@ -15,35 +16,6 @@ height = 1.15
 [sub_resource type="CapsuleMesh" id=2]
 radius = 0.5
 mid_height = 1.5
-
-[sub_resource type="Animation" id=8]
-resource_name = "Death"
-loop = true
-step = 0.025
-tracks/0/type = "value"
-tracks/0/path = NodePath("Head:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -90 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Head:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
-}
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -94,30 +66,6 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Head:rotation_degrees")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Head:translation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0.65, 0 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -233,18 +181,6 @@ script = ExtResource( 1 )
 wait_time = 0.4
 one_shot = true
 
-[node name="akShotTimer" type="Timer" parent="Timers"]
-process_mode = 0
-wait_time = 0.1
-one_shot = true
-autostart = true
-
-[node name="glockShotTimer" type="Timer" parent="Timers"]
-process_mode = 0
-wait_time = 0.35
-one_shot = true
-autostart = true
-
 [node name="glockReloadTimer" type="Timer" parent="Timers"]
 wait_time = 0.4
 one_shot = true
@@ -269,7 +205,7 @@ mesh = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-cull_mask = 1048573
+cull_mask = 1048569
 
 [node name="RayCast" type="RayCast" parent="Head/Camera"]
 enabled = true
@@ -298,6 +234,7 @@ swayUp = Vector3( 0.15, 0, 0 )
 swayDown = Vector3( -0.15, 0, 0 )
 
 [node name="Weapons" type="Spatial" parent="Head/Hand"]
+script = ExtResource( 4 )
 
 [node name="Glock" parent="Head/Hand/Weapons" instance=ExtResource( 5 )]
 
@@ -320,13 +257,10 @@ volume_db = -15.0
 [node name="playerUI" parent="." instance=ExtResource( 2 )]
 
 [node name="animPlayer" type="AnimationPlayer" parent="."]
-anims/Death = SubResource( 8 )
 anims/RESET = SubResource( 3 )
 anims/akFire = SubResource( 6 )
 anims/glockFire = SubResource( 4 )
 anims/glockReload = SubResource( 7 )
 anims/headBob = SubResource( 5 )
 
-[connection signal="timeout" from="Timers/akShotTimer" to="." method="akShotTimer_timeout"]
-[connection signal="timeout" from="Timers/glockShotTimer" to="." method="glockShotTimer_timeout"]
 [connection signal="timeout" from="Timers/glockReloadTimer" to="." method="glockReloadTimer_timeout"]
