@@ -1,6 +1,6 @@
 extends Control
 
-var current_version = 0.2
+var current_version = 0.1
 
 # > Screens
 onready var mainScr = $mainScr
