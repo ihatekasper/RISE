@@ -149,7 +149,8 @@ bbcode_text = "==== ver 0.1 (Dec 09 22 - ??) ====
 + added main menu"
 text = "==== ver 0.1 (Dec 09 22 - ??) ====
 
-
++ implemented rough dialogue
++ added guard npc
 + added map preview backgrounds
 + cleaned up menu
 + added version/update check in menu

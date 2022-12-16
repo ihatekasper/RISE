@@ -1,0 +1,330 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/materials/material_005.tres" type="Material" id=1]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/light/materials/material_008.tres" type="Material" id=2]
+[ext_resource path="res://entities/map/doors/door_vault.gd" type="Script" id=3]
+[ext_resource path="res://audio/sfx/entities/door_move.wav" type="AudioStream" id=4]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 1 )
+size = Vector3( 2, 2.5, 0.25 )
+
+[sub_resource type="CubeMesh" id=3]
+material = ExtResource( 2 )
+size = Vector3( 0.5, 0.1, 0.05 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1, 1.25, 0.125 )
+
+[sub_resource type="CubeMesh" id=2]
+material = ExtResource( 1 )
+size = Vector3( 4, 1.25, 0.25 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 2, 0.625, 0.125 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("front_left:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1.25, -0.125 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("front_right:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -1, 1.25, -0.125 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("back_top:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.875, 0.125 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("back_bot:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.625, 0.125 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("playerblocker/playercollisionblocker:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "close"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("front_left:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.98, 1.25, -0.125 ), Vector3( 1, 1.25, -0.125 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("front_right:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -2.98, 1.25, -0.125 ), Vector3( -1, 1.25, -0.125 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("back_top:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 3.11, 0.125 ), Vector3( 0, 3.11, 0.125 ), Vector3( 0, 1.875, 0.125 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("back_bot:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.61, 0.125 ), Vector3( 0, -0.61, 0.125 ), Vector3( 0, 0.625, 0.125 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("playerblocker/playercollisionblocker:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "open"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("front_left:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1.25, -0.125 ), Vector3( 2.98, 1.25, -0.125 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("front_right:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -1, 1.25, -0.125 ), Vector3( -2.98, 1.25, -0.125 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("back_top:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.875, 0.125 ), Vector3( 0, 1.875, 0.125 ), Vector3( 0, 3.11, 0.125 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("back_bot:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.625, 0.125 ), Vector3( 0, 0.625, 0.125 ), Vector3( 0, -0.61, 0.125 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("playerblocker/playercollisionblocker:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 2.5, 1.25, 2.75 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 2, 1.25, 0.125 )
+
+[node name="Vault Door" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="front_left" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.25, -0.125 )
+mesh = SubResource( 1 )
+
+[node name="door_handle" type="MeshInstance" parent="front_left"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.125 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody2" type="StaticBody" parent="front_left"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.25, 0.125 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="front_left/StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25, -0.125 )
+shape = SubResource( 8 )
+
+[node name="front_right" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25, -0.125 )
+mesh = SubResource( 1 )
+
+[node name="door_handle" type="MeshInstance" parent="front_right"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.125 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="front_right"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.25, 0.125 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="front_right/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25, -0.125 )
+shape = SubResource( 8 )
+
+[node name="back_top" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.875, 0.125 )
+mesh = SubResource( 2 )
+
+[node name="StaticBody4" type="StaticBody" parent="back_top"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98, 0.94875, -0.125 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="back_top/StaticBody4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.875, 0.125 )
+shape = SubResource( 10 )
+
+[node name="back_bot" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0.125 )
+mesh = SubResource( 2 )
+
+[node name="StaticBody3" type="StaticBody" parent="back_bot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98, 0.30125, -0.125 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="back_bot/StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.375, 0.125 )
+shape = SubResource( 10 )
+
+[node name="door_anim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/close = SubResource( 7 )
+anims/open = SubResource( 4 )
+
+[node name="waitTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="exitTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="enterArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1.875 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="enterArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.375 )
+shape = SubResource( 6 )
+
+[node name="exitArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 6.125 )
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="exitArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.375 )
+shape = SubResource( 6 )
+
+[node name="playerblocker" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0.5 )
+input_ray_pickable = false
+
+[node name="playercollisionblocker" type="CollisionShape" parent="playerblocker"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25, -0.125 )
+shape = SubResource( 9 )
+
+[node name="snd_door_move" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0 )
+stream = ExtResource( 4 )
+unit_size = 5.0
+attenuation_filter_db = -10.0
+
+[connection signal="timeout" from="waitTimer" to="." method="waitTimer_timeout"]
+[connection signal="timeout" from="exitTimer" to="." method="exitTimer_timeout"]
+[connection signal="body_entered" from="enterArea" to="." method="front_area_entered"]
+[connection signal="body_entered" from="exitArea" to="." method="exit_area_entered"]

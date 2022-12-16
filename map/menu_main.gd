@@ -78,7 +78,7 @@ func devtestingBtn_pressed():
 
 func facilityBtn_pressed():
 	queue_free()
-	get_tree().change_scene("res://map/blackmesa/lobby.tscn")
+	get_tree().change_scene("res://map/facility/lobby.tscn")
 
 func arcadeBtn_pressed():
 	queue_free()

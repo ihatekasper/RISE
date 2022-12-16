@@ -16,7 +16,7 @@ onready var accel = ACCEL_DEFAULT
 var gravity = 24
 var jump = 6.5
 var cam_accel = 40
-var mouse_sens = 0.04
+var mouse_sens = 0.15
 var snap
 var direction = Vector3()
 var velocity = Vector3()
@@ -36,14 +36,19 @@ onready var healthLabel = $playerUI/Health
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-# - Health Console Command
+# - Health Command
 	Console.add_command('set_health', self, 'health')\
 		.set_description('set player health')\
 		.add_argument('health', TYPE_INT)\
 		.register()
-
+# - Kill Command
 	Console.add_command('kill', self, 'respawn')\
 		.set_description('commit suicide')\
+		.register()
+# - Sensitivity Command
+	Console.add_command('sensitivity', self, 'mouse_sens')\
+		.set_description('set mouse sensitivity [default: 0.15]')\
+		.add_argument('mouse_sens', Console.FloatRangeType.new(0, 1, 0.05))\
 		.register()
 
 func _input(event):
@@ -140,7 +145,7 @@ func _physics_process(delta):
 	# - Fall damage
 	if is_on_floor():
 		if gravity_vec.length() >= 20:
-			health -= int(round(gravity_vec.length() * 2.25))
+			health -= int(round(gravity_vec.length() * 4.25))
 			$Audio/sndImpact.play()
 		elif gravity_vec.length() >= 2:
 			$Audio/sndRun.pitch_scale = rand_range(0.8, 1.2)

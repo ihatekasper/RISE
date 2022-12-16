@@ -153,6 +153,18 @@ theme = SubResource( 2 )
 text = "100"
 scroll_active = false
 
+[node name="icon2" type="TextureRect" parent="."]
+anchor_left = -6.109
+anchor_top = 1.147
+anchor_right = -6.109
+anchor_bottom = 1.147
+margin_left = 11756.3
+margin_top = -250.76
+margin_right = 12268.3
+margin_bottom = 261.24
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+
 [node name="Ammo" type="Label" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -178,18 +190,6 @@ margin_right = 7.90399
 margin_bottom = -8.19801
 rect_scale = Vector2( 0.5, 0.75 )
 texture = ExtResource( 8 )
-
-[node name="icon2" type="TextureRect" parent="Ammo"]
-anchor_left = -6.109
-anchor_top = 1.147
-anchor_right = -6.109
-anchor_bottom = 1.147
-margin_left = 26.9031
-margin_top = -91.994
-margin_right = 538.903
-margin_bottom = 420.006
-rect_scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 9 )
 
 [node name="crosshair" type="TextureRect" parent="."]
 anchor_left = 0.5

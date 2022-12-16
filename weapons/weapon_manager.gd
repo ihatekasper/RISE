@@ -37,7 +37,7 @@ onready var akFlash = $AK/MuzzleFlash
 onready var akTimer = $AK/akShotTimer
 
 func _ready():
-	weapon_id = 01
+	weapon_id = 00
 	glockTimer.connect("timeout", self, "glockShotTimer_timeout")
 	glockTimer.start()
 	akTimer.connect("timeout", self, "akShotTimer_timeout")
@@ -48,6 +48,9 @@ func _process(delta):
 	handle_ui()
 	fireGlock()
 	fireAk()
+	if weapon_id == 00:
+		weapon_ak.hide()
+		weapon_glock.hide()
 	if weapon_id == 01:
 		weapon_ak.show()
 		weapon_glock.hide()
@@ -62,12 +65,18 @@ func weapon_switch():
 		weapon_id = 01
 	if Input.is_action_just_pressed("weapon_secondary"):
 		weapon_id = 02
+	if Input.is_action_just_pressed("weapon_melee"):
+		weapon_id = 00
 
 func handle_ui():
 	if weapon_id == 01:
+		ammoLabel.show()
 		ammoLabel.set_text(String(akAmmo) + " | " + String(akReserve))
 	if weapon_id == 02:
+		ammoLabel.show()
 		ammoLabel.set_text(String(glockAmmo) + " | " + String(glockReserve))
+	if weapon_id == 00:
+		ammoLabel.hide()
 
 func glockShotTimer_timeout():
 	glock_can_shoot = true
