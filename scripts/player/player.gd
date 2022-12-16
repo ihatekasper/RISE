@@ -66,7 +66,7 @@ func _process(delta):
 	if health != curr_max_health:
 		ui_anim.play("pain")
 		curr_max_health = health
-	healthLabel.set_text("+ " + String(health))
+	healthLabel.set_text(String(health))
 
 	if Console.is_console_shown:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

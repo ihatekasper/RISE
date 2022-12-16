@@ -1,6 +1,6 @@
 extends Control
 
-var current_version = 0.1
+var current_version = 0.2
 
 # > Screens
 onready var mainScr = $mainScr
@@ -28,8 +28,12 @@ func _on_request_completed(result, response_code, headers, body):
 		$mainScr/updateText.hide()
 		$mainScr/updateBtn.hide()
 
+func _process(delta):
+	devtestingBtn_hovered()
+	facilityBtn_hovered()
+
 func updateBtn_pressed():
-	OS.shell_open("https://github.com/ihatekasper/rise/tree/main")
+	OS.shell_open("https://github.com/ihatekasper/RISE/releases")
 
 # > Main Screen Buttons
 
@@ -57,6 +61,8 @@ onready var mapsSub = $playScr/mapsSub
 func pbackTab_pressed():
 	playScr.hide()
 	mainScr.show()
+	mapsSub.hide()
+	createSub.show()
 
 func createTab_pressed():
 	createSub.show()
@@ -66,6 +72,14 @@ func mapBtn_pressed():
 	createSub.hide()
 	mapsSub.show()
 
+func devtestingBtn_pressed():
+	queue_free()
+	get_tree().change_scene("res://map/dev_testing.tscn")
+
+func facilityBtn_pressed():
+	queue_free()
+	get_tree().change_scene("res://map/blackmesa/lobby.tscn")
+
 func arcadeBtn_pressed():
 	queue_free()
 	get_tree().change_scene("res://map/dm_arcade.tscn")
@@ -74,17 +88,17 @@ func powerplantBtn_pressed():
 	queue_free()
 	get_tree().change_scene("res://map/de_powerplant.tscn")
 
-func devtestingBtn_pressed():
-	queue_free()
-	get_tree().change_scene("res://map/dev_testing.tscn")
+func devtestingBtn_hovered():
+	if $playScr/mapsSub/devtestingBtn.is_hovered():
+		$playScr/dev_testingBG.show()
+	else:
+		$playScr/dev_testingBG.hide()
 
-func serverTab_pressed():
-	pass # Replace with function body.
-
-func customizeTab_pressed():
-	pass # Replace with function body.
-
-
+func facilityBtn_hovered():
+	if $playScr/mapsSub/facilityBtn.is_hovered():
+		$playScr/facilityBG.show()
+	else:
+		$playScr/facilityBG.hide()
 
 # > Options Screen Buttons
 
@@ -101,7 +115,7 @@ func obackTab_pressed():
 	mainScr.show()
 	optionsScr.hide()
 
-# idfk?
+# Option Buttons
 
 func generalTab_pressed():
 	generalLabel.show()

@@ -65,9 +65,9 @@ func weapon_switch():
 
 func handle_ui():
 	if weapon_id == 01:
-		ammoLabel.set_text("// " + String(akAmmo) + "/" + String(akReserve))
+		ammoLabel.set_text(String(akAmmo) + " | " + String(akReserve))
 	if weapon_id == 02:
-		ammoLabel.set_text("// " + String(glockAmmo) + "/" + String(glockReserve))
+		ammoLabel.set_text(String(glockAmmo) + " | " + String(glockReserve))
 
 func glockShotTimer_timeout():
 	glock_can_shoot = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://font/KGHAPPYSolid.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://textures/dmgtaken2.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://textures/xhair01.png" type="Texture" id=5]
 [ext_resource path="res://textures/hitmarker_white.png" type="Texture" id=6]
 [ext_resource path="res://scripts/player/ui_velocity.gd" type="Script" id=7]
+[ext_resource path="res://interface/icons/game/PNG/White/2x/trashcan.png" type="Texture" id=8]
+[ext_resource path="res://interface/icons/player/ui_health.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -21,6 +23,13 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 9 )
 
 [sub_resource type="Animation" id=8]
 resource_name = "Death"
@@ -136,26 +145,51 @@ script = ExtResource( 7 )
 [node name="Health" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 32.0
+margin_left = 80.0
 margin_top = -123.0
-margin_right = 424.0
+margin_right = 284.0
 margin_bottom = -16.0
 theme = SubResource( 2 )
-text = "+ 100"
+text = "100"
 scroll_active = false
 
-[node name="Ammo" type="RichTextLabel" parent="."]
-anchor_left = 0.89
+[node name="Ammo" type="Label" parent="."]
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.89
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -174.8
-margin_top = -107.0
-margin_right = 177.2
-rect_pivot_offset = Vector2( 469, 52.783 )
-theme = SubResource( 2 )
-text = "99 / 99"
-scroll_active = false
+margin_left = -356.0
+margin_top = -117.0
+margin_right = -100.0
+margin_bottom = -15.0
+theme = SubResource( 10 )
+text = "00 | 00"
+align = 2
+valign = 1
+
+[node name="icon" type="TextureRect" parent="Ammo"]
+anchor_left = 1.391
+anchor_top = 1.149
+anchor_right = 1.391
+anchor_bottom = 1.149
+margin_left = -92.096
+margin_top = -108.198
+margin_right = 7.90399
+margin_bottom = -8.19801
+rect_scale = Vector2( 0.5, 0.75 )
+texture = ExtResource( 8 )
+
+[node name="icon2" type="TextureRect" parent="Ammo"]
+anchor_left = -6.109
+anchor_top = 1.147
+anchor_right = -6.109
+anchor_bottom = 1.147
+margin_left = 26.9031
+margin_top = -91.994
+margin_right = 538.903
+margin_bottom = 420.006
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
 
 [node name="crosshair" type="TextureRect" parent="."]
 anchor_left = 0.5
