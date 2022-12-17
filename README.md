@@ -3,7 +3,7 @@
 ## About
 RISE is a Singleplayer story-driven FPS game with a silent protagonist made in Godot, heavily inspired by Half-Life 1.
 
-Explore the ***** Facility through the eyes of Theoritical Scientist, ***** as it breaks down.
+Explore the ***** Facility through the eyes of their top Theoritical Scientist, ***** as it breaks down.
 
 ![alt text](https://i.imgur.com/6SGLYE7.gif)
 
