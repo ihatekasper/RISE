@@ -5,7 +5,7 @@ RISE is a Singleplayer story-driven FPS game with a silent protagonist made in G
 
 Explore the ***** Facility through the eyes of ***** as it breaks down.
 
-![alt text](https://i.imgur.com/9teNx8g.png)
+![alt text](https://i.imgur.com/6SGLYE7.gif)
 
 
 ## Features
