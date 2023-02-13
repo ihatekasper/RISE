@@ -1,4 +1,4 @@
-# RISE v0.1
+# RISE v0.1 (EVERYTHING IS SUBJECT TO CHANGE)
 
 ## About
 RISE is a Singleplayer story-driven FPS game with a silent protagonist made in Godot, heavily inspired by Half-Life 1.
@@ -12,10 +12,10 @@ Explore the ***** Facility through the eyes of their top Theoritical Scientist, 
 
 Collaborate with colleagues.
 
-![alt text](https://i.imgur.com/9teNx8g.png)
+![PLACEHOLDER](https://i.imgur.com/9teNx8g.png)
 Discover other-wordly creatures.
 
-![alt text](https://i.imgur.com/9teNx8g.png)
+![PLACEHOLDER](https://i.imgur.com/9teNx8g.png)
 
 ## Gameplay
 
