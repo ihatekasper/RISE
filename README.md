@@ -8,7 +8,7 @@ Explore the ***** Facility through the eyes of their top Theoritical Scientist, 
 ![alt text](https://i.imgur.com/6SGLYE7.gif)
 
 
-## Features
+## Features (Placeholders for now)
 
 Collaborate with colleagues.
 
